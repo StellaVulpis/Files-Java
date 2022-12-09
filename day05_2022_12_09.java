@@ -1,12 +1,10 @@
 package day05;
-import java.nio.file.FileSystemNotFoundException;
-import java.nio.file.spi.FileSystemProvider;
 import java.util.Scanner;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Logger;
 import java.util.logging.Level;
-public class day05_2022_12_09 
+public class Main
 {
 	public static void main(String args[])
 	{
@@ -350,28 +348,34 @@ class Test
     	String name="NAME", sex="sex";
     	String socialN01="991234", socialN02="1234567"; // 991234-1234567
     	System.out.println("birth2Digits: "+cYear2Digits);
-    	System.out.print("이름을 입력해주세요: ");
+    	System.out.print("Enter your name: ");
     	name=sc.nextLine();
-    	System.out.print("주민번호 앞자리를 입력해주세요: ");
+    	System.out.print("Please type first 6 digits of Social Security number: ");
     	socialN01=sc.nextLine();
-    	System.out.print("주민번호 뒷자리를 입력해주세요: ");
+    	System.out.print("Please type last 7 digits of Social Security number: ");
     	socialN02=sc.nextLine();
     	birth2Digits=Integer.parseInt(socialN01.substring(0,2));
     	SEX=Integer.parseInt(socialN02.substring(0,1));
     	System.out.println("\n\n\n");
-    	if(Integer.parseInt(socialN01)/1000000 > 1 || Integer.parseInt(socialN02)/1000000 > 1)
+    	if(Integer.parseInt(socialN01)/1000000 > 1 || Integer.parseInt(socialN02)/10000000 > 1)
     	{
-    		LOG.log(Level.INFO, "You've typed wrong digits of registration numbers."
+    		LOG.log(Level.INFO, "You've typed too long digits of Social Secirity numbers."
     				+ "\nPlease try again.");
+    	}
+    	else if(SEX > 4 || SEX < 0)
+    	{
+    		LOG.log(Level.INFO, "The first digit of last 7 digits you've entered was incorrect format,"
+			+"\nPlease type the numbers between 1 to 4.");
     	}
     	else
     	{
-	    		if(birthYear < 2000)
+	    		if(birth2Digits > cYear2Digits)
 		    	{
 		    		birthYear = birth2Digits+1900;
 		    		age=currentYear-birthYear;	
 		    	}
-		    	if(birth2Digits >= cYear2Digits)
+// Skip persons who was born before 1922(Over 100 years old) due to the average life span.
+		    	else if(birth2Digits <= cYear2Digits)
 		    	{
 		    		birthYear = birth2Digits+2000;
 		    		age=currentYear-birthYear;
@@ -387,25 +391,9 @@ class Test
 	    	System.out.println("Your Social Security number: "+socialN01+" - "+socialN02);
 	    	System.out.println("Your sex: " +sex);
 	    	System.out.println("Your age: "+age+" years old\n");
-	    	
 	    	System.out.println("--------------------------------------------------");
 	    	System.out.println("\n\nOkay, Goodbye!");
 	    	sc.close();
     	}
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
     }
 }
