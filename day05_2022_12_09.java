@@ -343,7 +343,7 @@ class Test
     			cYear2Digits=currentYear-2000; // 2022
     	//int nextGen = (2000-calendar.get(Calendar.YEAR))*(-1); 
     	// => 22, for the generations born after 2000 year.
-    	// 자릿수 구하기: 해당 자릿수의 1의 배수(1/10/100/1000)으로 나눠서 1.0을 넘지 않으면 그 자릿수이다.
+    	// 자릿수 구하기: 해당 자릿수에서 0을하나 더한 1의 배수(1 > 10 / 10 > 100 / 100 > 1000 / 1000 > 10000)으로 나눠서 1.0과 같거나 넘지 않으면 그 자릿수이다.
     	// 예시: 971127 / 1000000 >> 0.97 - 6자리수
     	String name="NAME", sex="sex";
     	String socialN01="991234", socialN02="1234567"; // 991234-1234567
