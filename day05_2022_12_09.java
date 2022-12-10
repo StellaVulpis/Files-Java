@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Logger;
 import java.util.logging.Level;
-public class Main
+public class day05_2022_12_09
 {
 	public static void main(String args[])
 	{
@@ -357,7 +357,7 @@ class Test
     	birth2Digits=Integer.parseInt(socialN01.substring(0,2));
     	SEX=Integer.parseInt(socialN02.substring(0,1));
     	System.out.println("\n\n\n");
-    	if(Integer.parseInt(socialN01)/1000000 > 1 || Integer.parseInt(socialN02)/10000000 > 1)
+    	if(Integer.parseInt(socialN01)/1000000 >= 1 || Integer.parseInt(socialN02)/10000000 >= 1)
     	{
     		LOG.log(Level.INFO, "You've typed too long digits of Social Secirity numbers."
     				+ "\nPlease try again.");
