@@ -347,7 +347,7 @@ class Test
     	// 예시: 971127 / 1000000 >> 0.97 - 6자리수
     	String name="NAME", sex="sex";
     	String socialN01="991234", socialN02="1234567"; // 991234-1234567
-    	System.out.println("birth2Digits: "+cYear2Digits);
+    	System.out.println("cYear2Digits: "+cYear2Digits);
     	System.out.print("Enter your name: ");
     	name=sc.nextLine();
     	System.out.print("Please type first 6 digits of Social Security number: ");
@@ -369,13 +369,12 @@ class Test
     	}
     	else
     	{
-	    		if(birth2Digits > cYear2Digits)
+	    		if(birth2Digits < 100 && birth2Digits > cYear2Digits) // 1923~1999년생
 		    	{
 		    		birthYear = birth2Digits+1900;
 		    		age=currentYear-birthYear;	
 		    	}
-// Skip persons who was born before 1922(Over 100 years old) due to the average life span.
-		    	else if(birth2Digits <= cYear2Digits)
+	    		else if(birth2Digits >= 0 && birth2Digits <= cYear2Digits) // 2000~2022년생
 		    	{
 		    		birthYear = birth2Digits+2000;
 		    		age=currentYear-birthYear;
