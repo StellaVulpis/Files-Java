@@ -1,4 +1,4 @@
-// 아래 모든 코드는 직접 작성했으며, 2022-12-22 일자에 Izen Academy 시험에 참고하기 위해 직접 데스크탑과 Eclipse를 이용하여 작성한 코드입니다.
+// 아래 모든 코드는 직접 작성했으며, 2022-12-22 일자에 직접 데스크탑과 Eclipse를 이용하여 작성한 코드입니다.
 package day14;
 import java.io.BufferedReader;
 import java.io.FileReader;
