@@ -13,6 +13,7 @@ public class TEST2_20221223 implements line, Scanf
 	{
 		TEST2_20221223 test = new TEST2_20221223();
 		test.RUN_MENU_TEST01();
+                //test.RUN_MENU_TEST02();
 	}
 	public void RUN_MENU_TEST01()
 	{
