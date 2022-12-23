@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.io.BufferedReader;
 public class File_Test 
 {
-	public static void main(String args[]) throws IOException
+	public static void main(String args[])
 	{
 		// Essential declaration
+           try
+             {
 		FileReader file = new FileReader("C:/Data/1221.txt");
 		/*
 		 * 1221.txt
@@ -31,7 +33,7 @@ public class File_Test
 				if(str==null)
 				{
 					bf.close();
-					return;
+					break;
 				}
 				rank=Integer.parseInt(str.substring(0,1));
 				name=str.substring(1,4);
@@ -40,5 +42,9 @@ public class File_Test
 				math=Integer.parseInt(str.substring(10,13));
 				System.out.printf("%d\t%s\t%d\t%d\t%d\n",rank,name,kor,eng,math);
 		}
+              }catch(IOException e)
+              {
+               e.printStackTrace();
+              }
 	}
 }
