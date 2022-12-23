@@ -1,7 +1,7 @@
 package day14;
 
 import java.util.Scanner;
-
+ 
 public class TEST_Prepare 
 {
 	public static void main(String args[])
