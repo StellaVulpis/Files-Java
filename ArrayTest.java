@@ -1,25 +1,59 @@
-package day16_test_feedback;
+package day17;
 
 public class ArrayTest 
 {
 	public static void main(String args[])
 	{
-		int a[]=new int[5]; // 고정
-		a[0]=128;
-		a[1]=32;
-		a[2]=11;
-		a[3]=45;
-		a[4]=22;
-		int count=0;
-		System.out.println("<빠른 for 배열>");
-		for(int i:a)
-		{
-			System.out.println("인덱스: "+count+", 값: "+i);
-			count++;
-		}
-		System.out.println("-----------------------------------------");
-		System.out.println("<일반 for 배열>");
+		/* 
+		 * 1  6  11 16 21  
+		 * 2  7  12 17 22
+		 * 3  8  13 18 23
+		 * 4  9  14 19 24
+		 * 5  10 15 20 25
+		 * */
+		int a[][] = new int[5][5];
+		int n=0;
 		for(int i=0;i<5;i++)
-			System.out.println("인덱스: "+i+", 값: "+a[i]);
+		{
+			if(i%2==1)
+			{
+				for(int t=4;t>=0;t--)
+				{
+					a[i][t]=t+1;
+					System.out.print(a[i][t]+" ");
+				}
+			}
+			else
+			{
+				for(int t=0;t<5;t++)
+				{
+					a[i][t]=t+1;
+					System.out.print(a[i][t]+" ");
+				}
+			}
+			System.out.println();
+		}
+		System.out.println("--------------------------------------------");
+		for(int i=0;i<5;i++)
+		{
+				for(int t=0;t<5;t++)
+				{
+					n++;
+					a[t][i]=n; 
+					/* 
+					 * n: 12345 678910 1112131415 1617181920 2122232425
+					*/
+				}
+				System.out.println();
+		}
+		// 출력
+		for(int i=0;i<5;i++)
+		{
+				for(int t=0;t<5;t++)
+				{
+					System.out.print(a[i][t]+" ");
+				}
+				System.out.println();
+		}
 	}
 }

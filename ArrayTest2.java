@@ -1,49 +1,42 @@
-package day16_test_feedback;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+package day17;
 
 public class ArrayTest2 
 {
 	public static void main(String args[])
 	{
-		int a[] = new int[5];
-		ARR ar = new ARR();
-		try
+		int a[][] = new int[3][3];
+		int r=2,c=1;
+		/*
+		 * 4  9  2
+		 * 3  5  7
+		 * 8  1  6
+		 * 
+		 * */
+		for(int i=1;i<=9;i++)
 		{
-			FileReader file = new FileReader("C:/Data/1234.txt");
-			BufferedReader bf = new BufferedReader(file);
-			int c=0;
-		while(true)
-		{
-			String str=bf.readLine();
-			if(str==null)
+			a[r][c]=i;
+			System.out.println("r: "+r+" c: "+c);
+			if(i%3==0)
 			{
-				bf.close();
-				break;
+				r--;
 			}
-			int num=Integer.parseInt(str.substring(0,2));
-			a[c]=num; // 파일에 있는 문자를 숫자로 바꾼 뒤 배열에 전부 저장한다. (null이 되면 종료되기에 자동으로 5개 저장이 된다.)
-			c++;
+			else
+			{
+				r++;
+				c++;
+			}
+			if(r>2)
+				r=0;
+			if(c>2)
+				c=0;
 		}
-		ar.Sum(a);
-		}catch(IOException e)
+		for(int i=0;i<3;i++)
 		{
-			
+			for(int t=0;t<3;t++)
+			{
+				System.out.print(a[i][t]+" ");
+			}
+			System.out.println();
 		}
-		finally
-		{
-			System.out.println("배열의 합은 "+ar.sum+" 입니다.");
-		}
-	}
-}
-class ARR
-{
-	int sum=0;
-	public void Sum(int a[]) // 반복문이 위에서 이미 돌아가고 있으므로, 위에서 배열과 배열의 인덱스만 받아서 계산만 해주면 된다.
-	{
-		for(int i=0;i<a.length;i++)
-			System.out.println(sum+=a[i]); // 여기서 출력하는 이유는 더해지고 있는 상황을 보기 위해서이며, 출력하지 않아도 상관없다.
 	}
 }
