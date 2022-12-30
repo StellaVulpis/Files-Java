@@ -145,7 +145,7 @@ interface io
 	public char scChar();
 	public int scInt();
 	public double scDouble();
-	int toInt(String num);
+	public int toInt(String num);
 	public void printf(String text);
 	public void printf(int num);
 	public void printf(double num);
