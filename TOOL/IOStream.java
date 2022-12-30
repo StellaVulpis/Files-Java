@@ -1,37 +1,68 @@
 package TOOL;
 import java.util.Scanner;
-// when calling this method: import TOOL.*; 
-// IOStream io = new IOStream();
 public class IOStream implements io
 {
 	public String ln="\n------------------------------------------------------\n";
 	@Override
-	public String scLine(String text)
+	public String scanf(String text) // put "" to use.
+	{
+		Scanner sc = new Scanner(System.in);	
+		text=sc.nextLine();
+		return text;
+	}
+	public int scanf(int num) // put 0 to use.
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.print(text+": ");
+		num=sc.nextInt();
+		return num;
+	}
+	@Override
+	public double scanf(double num) // put 0 to use.
+	{
+		Scanner sc = new Scanner(System.in);
+		num=sc.nextDouble();
+		return num;
+	}
+	@Override
+	public String scLine() 
+	{
+		Scanner sc = new Scanner(System.in);
 		return sc.nextLine();
 	}
 	@Override
-	public int scInt(String text)
+	public char scChar() 
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.print(text+": ");
+		return sc.next().charAt(0);
+	}
+	@Override
+	public int scInt() 
+	{
+		Scanner sc = new Scanner(System.in);
 		return sc.nextInt();
+	}
+	@Override
+	public double scDouble() 
+	{
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	@Override
 	public void printf(String text)
 	{
 		System.out.printf("%s",text);
 	}
+	@Override
 	public void printf(int num)
 	{
 		System.out.printf("%d",num);
 	}
+	@Override
 	public void printf(double num)
 	{
 		System.out.printf("%f",num);
 	}
+	@Override
 	public void printf(Boolean bool)
 	{
 		System.out.printf("%b",bool); // %B is also acceptable, %B is for printing capital letter.
@@ -41,18 +72,22 @@ public class IOStream implements io
 	{
 		System.out.println(text);
 	}
+	@Override
 	public void println(int num) // Method overriding 
 	{
 		System.out.println(num);
 	}
+	@Override
 	public void println(double num) // Method overriding 
 	{
 		System.out.println(num);
 	}
+	@Override
 	public void println(Boolean bool) // Method overriding 
 	{
 		System.out.println(bool);
 	}
+	@Override
 	public void println() // Method overriding 
 	{
 		System.out.println();
@@ -62,14 +97,17 @@ public class IOStream implements io
 	{
 		System.out.print(text);
 	}
+	@Override
 	public void print(int num) 
 	{
 		System.out.print(num);
 	}
-	public void print(Double num) 
+	@Override
+	public void print(double num) 
 	{
 		System.out.print(num);
 	}
+	@Override
 	public void print(Boolean text) 
 	{
 		System.out.print(text);
@@ -94,15 +132,33 @@ public class IOStream implements io
 	{
 		System.exit(0);
 	}
+	
+	
+	
 }
 interface io
 {
-	public String scLine(String text);
+	public String scanf(String text);
+	public int scanf(int num);
+	public double scanf(double num);
+	public String scLine();
+	public char scChar();
+	public int scInt();
+	public double scDouble();
 	int toInt(String num);
-	public int scInt(String text);
 	public void printf(String text);
+	public void printf(int num);
+	public void printf(double num);
+	public void printf(Boolean bool);
 	public void println(String text);
+	public void println(int num);
+	public void println(double num);
+	public void println(Boolean bool);
+	public void println();
 	public void print(String text);
+	public void print(int num);
+	public void print(double num);
+	public void print(Boolean bool);
 	public void err(String text);
 	public void errln(String text);
 	public void exit();
