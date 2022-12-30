@@ -1,8 +1,8 @@
-// import TOOL.*;
-// IOStream io = new IOStream();
 package TOOL;
 import java.util.Scanner;
-public class util implements io
+// when calling this method: import TOOL.*; 
+// IOStream io = new IOStream();
+public class IOStream implements io
 {
 	public String ln="\n------------------------------------------------------\n";
 	@Override
@@ -22,15 +22,55 @@ public class util implements io
 	@Override
 	public void printf(String text)
 	{
-		System.out.printf(text);
+		System.out.printf("%s",text);
+	}
+	public void printf(int num)
+	{
+		System.out.printf("%d",num);
+	}
+	public void printf(double num)
+	{
+		System.out.printf("%f",num);
+	}
+	public void printf(Boolean bool)
+	{
+		System.out.printf("%b",bool); // %B is also acceptable, %B is for printing capital letter.
 	}
 	@Override
-	public void println(String text)
+	public void println(String text) // Method overriding 
 	{
 		System.out.println(text);
 	}
+	public void println(int num) // Method overriding 
+	{
+		System.out.println(num);
+	}
+	public void println(double num) // Method overriding 
+	{
+		System.out.println(num);
+	}
+	public void println(Boolean bool) // Method overriding 
+	{
+		System.out.println(bool);
+	}
+	public void println() // Method overriding 
+	{
+		System.out.println();
+	}
 	@Override
-	public void print(String text)
+	public void print(String text) 
+	{
+		System.out.print(text);
+	}
+	public void print(int num) 
+	{
+		System.out.print(num);
+	}
+	public void print(Double num) 
+	{
+		System.out.print(num);
+	}
+	public void print(Boolean text) 
 	{
 		System.out.print(text);
 	}
