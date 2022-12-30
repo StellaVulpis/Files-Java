@@ -1,5 +1,7 @@
 package TOOL;
 import java.util.Scanner;
+// import TOOL.*;
+// IOStream io = new IOStream();
 public class IOStream implements io
 {
 	public String ln="\n------------------------------------------------------\n";
@@ -132,9 +134,18 @@ public class IOStream implements io
 	{
 		System.exit(0);
 	}
-	
-	
-	
+	@Override
+	public String format(String t, int n) 
+	{
+		return String.format("%"+n+
+				"s", t);
+	}	
+	@Override
+	public String formatReverse(String t, int n)
+	{
+		return String.format("%-"+n+"s", t);
+		
+	}
 }
 interface io
 {
@@ -162,4 +173,6 @@ interface io
 	public void err(String text);
 	public void errln(String text);
 	public void exit();
+	public String format(String t, int n);
+	public String formatReverse(String t, int n);
 }
