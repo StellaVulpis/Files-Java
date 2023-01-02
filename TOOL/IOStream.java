@@ -1,7 +1,5 @@
 package TOOL;
 import java.util.Scanner;
-// import TOOL.*;
-// IOStream io = new IOStream();
 public class IOStream implements io
 {
 	public String ln="\n------------------------------------------------------\n";
@@ -46,8 +44,8 @@ public class IOStream implements io
 	@Override
 	public double scDouble() 
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		Scanner sc = new Scanner(System.in);
+		return sc.nextDouble();
 	}
 	@Override
 	public void printf(String text)
@@ -70,27 +68,27 @@ public class IOStream implements io
 		System.out.printf("%b",bool); // %B is also acceptable, %B is for printing capital letter.
 	}
 	@Override
-	public void println(String text) // Method overriding 
+	public void println(String text) // Method overloading
 	{
 		System.out.println(text);
 	}
 	@Override
-	public void println(int num) // Method overriding 
+	public void println(int num) // Method overloading
 	{
 		System.out.println(num);
 	}
 	@Override
-	public void println(double num) // Method overriding 
+	public void println(double num) // Method overloading
 	{
 		System.out.println(num);
 	}
 	@Override
-	public void println(Boolean bool) // Method overriding 
+	public void println(Boolean bool) // Method overloading
 	{
 		System.out.println(bool);
 	}
 	@Override
-	public void println() // Method overriding 
+	public void println() // Method overloading
 	{
 		System.out.println();
 	}
