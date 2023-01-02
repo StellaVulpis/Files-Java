@@ -58,6 +58,16 @@ public class IOStream implements io
 		System.out.printf("%d",num);
 	}
 	@Override
+	public void printf(String text, int num) 
+	{
+		System.out.printf(text, num);
+	}
+	@Override
+	public void printf(String text, int n1, int n2, int n3) 
+	{
+		System.out.printf(text, n1, n2, n3);
+	}
+	@Override
 	public void printf(double num)
 	{
 		System.out.printf("%f",num);
@@ -142,7 +152,6 @@ public class IOStream implements io
 	public String formatReverse(String t, int n)
 	{
 		return String.format("%-"+n+"s", t);
-		
 	}
 }
 interface io
@@ -156,6 +165,8 @@ interface io
 	public double scDouble();
 	public int toInt(String num);
 	public void printf(String text);
+	public void printf(String text, int num);
+	public void printf(String text, int n1, int n2, int n3);
 	public void printf(int num);
 	public void printf(double num);
 	public void printf(Boolean bool);
