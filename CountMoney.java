@@ -7,7 +7,7 @@ class CountMoney
    int money[]={50000,10000,5000,1000,500,
 100,50,10};
    int count[]=new int[8];
-   int val=scanf(0);
+   int val=o.scanf(0);
    while(true)
    {
     if(val>10)
