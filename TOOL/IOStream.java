@@ -159,6 +159,10 @@ public class IOStream implements io
 	{
 		System.out.println(keyset);
 	}
+	public void print(Set<Integer> keyset) 
+	{
+		System.out.print(keyset);
+	}
 }
 interface io
 {
