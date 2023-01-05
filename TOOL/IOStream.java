@@ -1,5 +1,6 @@
 package TOOL;
 import java.util.Scanner;
+import java.util.Set;
 public class IOStream implements io
 {
 	public String ln="\n------------------------------------------------------\n";
@@ -153,6 +154,11 @@ public class IOStream implements io
 	{
 		return String.format("%-"+n+"s", t);
 	}
+	@Override
+	public void println(Set<Integer> keyset) 
+	{
+		System.out.println(keyset);
+	}
 }
 interface io
 {
@@ -174,6 +180,7 @@ interface io
 	public void println(int num);
 	public void println(double num);
 	public void println(Boolean bool);
+	public void println(Set<Integer> keyset) ;
 	public void println();
 	public void print(String text);
 	public void print(int num);
