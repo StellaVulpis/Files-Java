@@ -48,3 +48,31 @@ public class MAIN
       System.out.println("========================================");
   }
 }
+
+
+
+/*
+//-------------------[OUTPUT]-------------------//
+Saving 'Meow' to 'play' variable in Furry superclass...
+Received CatFurry class into Furry Superclass.
+CatFurry class was applied to the value of method and variables in Furry abstract superclass
+========================================
+Printing Meow
+========================================
+Saving 'Rawr' to 'play' variable in Furry superclass...
+Received DogFurry class into Furry Superclass.
+DogFurry class was applied to the value of method and variables in Furry abstract superclass
+========================================
+Printing Rawr
+========================================
+
+*/
+
+
+
+
+
+
+
+
+
